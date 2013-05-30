@@ -243,7 +243,7 @@ Use parentheses for all function calls:
 ```coffeescript
 baz(12)
 
-brush.ellipse(x: 10, y: 20)
+brush.ellipse(x: 10, y: 20) # Braces can also be omitted or included for readability
 
 foo(4).bar(8)
 
