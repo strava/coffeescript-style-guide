@@ -407,18 +407,18 @@ If a custom annotation is required, the annotation should be documented in the p
 <a name="miscellaneous"/>
 ## Miscellaneous
 
-`and` is preferred over `&&`.
+`&&` is preferred over `and`.
 
-`or` is preferred over `||`.
+`||` is preferred over `or`.
 
-`is` is preferred over `==`.
+`==` is preferred over `is`.
 
-`not` is preferred over `!`.
+`!` is preferred over `not`.
 
-`or=` should be used when possible:
+`||=` should be used when possible:
 
 ```coffeescript
-temp or= {} # Yes
+temp ||= {} # Yes
 temp = temp || {} # No
 ```
 
