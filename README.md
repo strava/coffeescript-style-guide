@@ -80,8 +80,8 @@ UTF-8 is the preferred source file encoding.
 Use [Sprockets require directives](https://github.com/sstephenson/sprockets#the-require-directive) to declare dependencies. Require directives should be placed on separate lines and *must* be placed at the top of files before any code.
 
 ```coffeescript
-#= require 'lib/Foo
-#= require 'lib/Bar
+#= require 'lib/Foo'
+#= require 'lib/Bar'
 ```
 
 <a name="whitespace"/>
