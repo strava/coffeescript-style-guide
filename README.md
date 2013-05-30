@@ -77,17 +77,12 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
+Use [Sprockets require directives](https://github.com/sstephenson/sprockets#the-require-directive) to declare dependencies. Require directives should be placed on separate lines and *must* be placed at the top of files before any code.
 
 ```coffeescript
-require 'lib/setup'
-Backbone = require 'backbone'
+#= require 'lib/Foo
+#= require 'lib/Bar
 ```
-These statements should be grouped in the following order:
-
-1. Standard library imports _(if a standard library exists)_
-2. Third party library imports
-3. Local imports _(imports specific to this application or library)_
 
 <a name="whitespace"/>
 ## Whitespace in Expressions and Statements
