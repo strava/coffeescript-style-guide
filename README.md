@@ -77,17 +77,12 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
+Use [Sprockets require directives](https://github.com/sstephenson/sprockets#the-require-directive) to declare dependencies. Require directives should be placed on separate lines and *must* be placed at the top of files before any code.
 
 ```coffeescript
-require 'lib/setup'
-Backbone = require 'backbone'
+#= require 'lib/Foo'
+#= require 'lib/Bar'
 ```
-These statements should be grouped in the following order:
-
-1. Standard library imports _(if a standard library exists)_
-2. Third party library imports
-3. Local imports _(imports specific to this application or library)_
 
 <a name="whitespace"/>
 ## Whitespace in Expressions and Statements
@@ -243,46 +238,27 @@ In cases where method calls are being chained and the code does not fit on a sin
   .reduce((x, y) -> x + y)
 ```
 
-When calling functions, choose to omit or include parentheses in such a way that optimizes for readability. Keeping in mind that "readability" can be subjective, the following examples demonstrate cases where parentheses have been omitted or included in a manner that the community deems to be optimal:
+Use parentheses for all function calls:
 
 ```coffeescript
-baz 12
+baz(12)
 
-brush.ellipse x: 10, y: 20 # Braces can also be omitted or included for readability
+brush.ellipse(x: 10, y: 20) # Braces can also be omitted or included for readability
 
 foo(4).bar(8)
 
 obj.value(10, 20) / obj.value(20, 10)
-
-print inspect value
-
-new Tag(new Value(a, b), new Arg(c))
 ```
 
-You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
+Do not use the "function grouping style", where parentheses are used to group functions instead of function parameters:
 
 ```coffeescript
-($ '#selektor').addClass 'klass'
+$('#selektor').addClass('klass') # Yes
+($ '#selektor').addClass('klass') # No
 
-(foo 4).bar 8
+foo(4).bar(8) # Yes
+(foo 4).bar(8) # No
 ```
-
-This is in contrast to:
-
-```coffeescript
-$('#selektor').addClass 'klass'
-
-foo(4).bar 8
-```
-
-In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
-
-```coffeescript
-($ '#selektor').addClass('klass').hide() # Initial call only
-(($ '#selektor').addClass 'klass').hide() # All calls
-```
-
-The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
 
 <a name="strings"/>
 ## Strings
@@ -407,18 +383,18 @@ If a custom annotation is required, the annotation should be documented in the p
 <a name="miscellaneous"/>
 ## Miscellaneous
 
-`and` is preferred over `&&`.
+`&&` is preferred over `and`.
 
-`or` is preferred over `||`.
+`||` is preferred over `or`.
 
-`is` is preferred over `==`.
+`==` is preferred over `is`.
 
-`not` is preferred over `!`.
+`!` is preferred over `not`.
 
-`or=` should be used when possible:
+`||=` should be used when possible:
 
 ```coffeescript
-temp or= {} # Yes
+temp ||= {} # Yes
 temp = temp || {} # No
 ```
 
