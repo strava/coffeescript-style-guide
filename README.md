@@ -209,6 +209,12 @@ Methods and variables that are intended to be "private" should begin with a lead
 _privateMethod: ->
 ```
 
+Variables that reference jQuery elements or collections should begin with a leading dollar sign:
+
+```coffeescript
+$container = $('#container')
+```
+
 <a name="functions"/>
 ## Functions
 
