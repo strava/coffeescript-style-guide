@@ -435,6 +435,21 @@ console.log args... # Yes
 (a, b, c, rest...) -> # Yes
 ```
 
+Use `@` parameters in constructors instead of assigning in the function
+
+```coffeescript
+
+# Yes
+class Bam
+  constructor: (@foo, @bar) ->
+
+# No
+class Bam
+  constructor: (foo, bar) ->
+    @foo = foo
+    @bar = bar
+```
+
 [coffeescript]: http://jashkenas.github.com/coffee-script/
 [coffeescript-issue-425]: https://github.com/jashkenas/coffee-script/issues/425
 [spine-js]: http://spinejs.com/
