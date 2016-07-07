@@ -77,7 +77,7 @@ UTF-8 is the preferred source file encoding.
 <a name="module_imports"/>
 ## Module Imports
 
-Use [Sprockets require directives](https://github.com/sstephenson/sprockets#the-require-directive) to declare dependencies. Require directives should be placed on separate lines and *must* be placed at the top of files before any code.
+Use [Sprockets require directives](https://github.com/rails/sprockets#the-require-directive) to declare dependencies. Require directives should be placed on separate lines and *must* be placed at the top of files before any code.
 
 ```coffeescript
 #= require 'lib/Foo'
