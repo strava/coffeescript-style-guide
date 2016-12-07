@@ -220,6 +220,40 @@ $container = $('#container')
 
 _(These guidelines also apply to the methods of a class.)_
 
+When a function has more than 4 arguments, it is encouraged to use an argument object.  This is particularly useful for class constructors, making it easier to read the call where it is created.  Example:
+
+```coffeescript
+### Good. ###
+
+class Foo
+  constructor: (args) ->
+    {
+      @varA,
+      @varB,
+      @varC,
+      @varD,
+      @varE,
+      @varF
+    } = args
+
+foo = new Foo({
+  varA: inputA
+  varB: inputB
+  varC: inputC
+  varD: inputD
+  varE: inputE
+  varF: inputF
+})
+
+
+### Bad. ###
+class Bar
+  constructor: (@varA, @varB, @varC, @varD, @varE, @varF) ->
+    ...
+
+bar = new Bar(inputA, inputB, inputC, inputD, inputE, inputF)
+```
+
 When declaring a function that takes arguments, always use a single space after the closing parenthesis of the arguments list:
 
 ```coffeescript
