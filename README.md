@@ -233,25 +233,24 @@ class Foo
       @varC,
       @varD,
       @varE,
-      @varF
+      @varF = 'defaultString'
     } = args
 
-foo = new Foo({
+foo = new Foo(
   varA: inputA
   varB: inputB
   varC: inputC
   varD: inputD
   varE: inputE
-  varF: inputF
-})
+)
 
 
 ### Bad. ###
 class Bar
-  constructor: (@varA, @varB, @varC, @varD, @varE, @varF) ->
+  constructor: (@varA, @varB, @varC, @varD, @varE, @varF = 'defaultString') ->
     ...
 
-bar = new Bar(inputA, inputB, inputC, inputD, inputE, inputF)
+bar = new Bar(inputA, inputB, inputC, inputD, inputE)
 ```
 
 When declaring a function that takes arguments, always use a single space after the closing parenthesis of the arguments list:
